@@ -1,0 +1,21 @@
+$kind: http-request
+url: "{{baseUrl}}/api/disco"
+method: POST
+headers:
+  Accept: application/json
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+        "idArtista": "{{artistaId}}",
+        "nombre": "Master of Puppets",
+        "anioLanzamiento": 1986,
+        "canciones": [
+            "Battery",
+            "Master of Puppets",
+            "The Thing That Should Not Be",
+            "Welcome Home (Sanitarium)"
+        ]
+    }
+order: 2000

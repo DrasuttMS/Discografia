@@ -1,0 +1,6 @@
+$kind: http-request
+url: "{{baseUrl}}/api/artista/{{artistaId}}/discos"
+method: GET
+headers:
+  Accept: application/json
+order: 4000

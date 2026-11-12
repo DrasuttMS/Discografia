@@ -1,0 +1,8 @@
+name: Discografia Local
+values:
+  - key: baseUrl
+    value: 'http://localhost:8080'
+  - key: artistaId
+    value: REEMPLAZAR_CON_ID_DEL_ARTISTA
+  - key: discoId
+    value: REEMPLAZAR_CON_ID_DEL_DISCO

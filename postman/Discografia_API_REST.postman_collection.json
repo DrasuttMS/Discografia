@@ -1,0 +1,175 @@
+{
+    "item":  [
+                 {
+                     "name":  "ARTISTAS",
+                     "item":  [
+                                  {
+                                      "name":  "Listar artistas",
+                                      "request":  {
+                                                      "method":  "GET",
+                                                      "url":  "{{baseUrl}}/api/artistas",
+                                                      "header":  [
+                                                                     {
+                                                                         "key":  "Accept",
+                                                                         "value":  "application/json"
+                                                                     }
+                                                                 ]
+                                                  }
+                                  },
+                                  {
+                                      "name":  "Registrar artista",
+                                      "request":  {
+                                                      "body":  {
+                                                                   "raw":  "{\n    \"nombre\": \"Metallica\",\n    \"estilos\": [\n        \"Heavy Metal\",\n        \"Thrash Metal\"\n    ],\n    \"anioFundacion\": 1981,\n    \"estaActivo\": true\n}",
+                                                                   "options":  {
+                                                                                   "raw":  {
+                                                                                               "language":  "json"
+                                                                                           }
+                                                                               },
+                                                                   "mode":  "raw"
+                                                               },
+                                                      "method":  "POST",
+                                                      "url":  "{{baseUrl}}/api/artista",
+                                                      "header":  [
+                                                                     {
+                                                                         "key":  "Accept",
+                                                                         "value":  "application/json"
+                                                                     },
+                                                                     {
+                                                                         "key":  "Content-Type",
+                                                                         "value":  "application/json"
+                                                                     }
+                                                                 ]
+                                                  }
+                                  },
+                                  {
+                                      "name":  "Buscar artista por ID",
+                                      "request":  {
+                                                      "method":  "GET",
+                                                      "url":  "{{baseUrl}}/api/artista/{{artistaId}}",
+                                                      "header":  [
+                                                                     {
+                                                                         "key":  "Accept",
+                                                                         "value":  "application/json"
+                                                                     }
+                                                                 ]
+                                                  }
+                                  },
+                                  {
+                                      "name":  "Actualizar artista",
+                                      "request":  {
+                                                      "body":  {
+                                                                   "raw":  "{\n    \"nombre\": \"Metallica\",\n    \"estilos\": [\n        \"Heavy Metal\",\n        \"Thrash Metal\"\n    ],\n    \"anioFundacion\": 1981,\n    \"estaActivo\": true\n}",
+                                                                   "options":  {
+                                                                                   "raw":  {
+                                                                                               "language":  "json"
+                                                                                           }
+                                                                               },
+                                                                   "mode":  "raw"
+                                                               },
+                                                      "method":  "PUT",
+                                                      "url":  "{{baseUrl}}/api/artista/{{artistaId}}",
+                                                      "header":  [
+                                                                     {
+                                                                         "key":  "Accept",
+                                                                         "value":  "application/json"
+                                                                     },
+                                                                     {
+                                                                         "key":  "Content-Type",
+                                                                         "value":  "application/json"
+                                                                     }
+                                                                 ]
+                                                  }
+                                  },
+                                  {
+                                      "name":  "Eliminar artista",
+                                      "request":  {
+                                                      "method":  "DELETE",
+                                                      "url":  "{{baseUrl}}/api/artista/{{artistaId}}",
+                                                      "header":  [
+                                                                     {
+                                                                         "key":  "Accept",
+                                                                         "value":  "application/json"
+                                                                     }
+                                                                 ]
+                                                  }
+                                  }
+                              ]
+                 },
+                 {
+                     "name":  "DISCOS",
+                     "item":  [
+                                  {
+                                      "name":  "Listar discos",
+                                      "request":  {
+                                                      "method":  "GET",
+                                                      "url":  "{{baseUrl}}/api/discos",
+                                                      "header":  [
+                                                                     {
+                                                                         "key":  "Accept",
+                                                                         "value":  "application/json"
+                                                                     }
+                                                                 ]
+                                                  }
+                                  },
+                                  {
+                                      "name":  "Registrar disco",
+                                      "request":  {
+                                                      "body":  {
+                                                                   "raw":  "{\n    \"idArtista\": \"{{artistaId}}\",\n    \"nombre\": \"Master of Puppets\",\n    \"anioLanzamiento\": 1986,\n    \"canciones\": [\n        \"Battery\",\n        \"Master of Puppets\",\n        \"The Thing That Should Not Be\",\n        \"Welcome Home (Sanitarium)\"\n    ]\n}",
+                                                                   "options":  {
+                                                                                   "raw":  {
+                                                                                               "language":  "json"
+                                                                                           }
+                                                                               },
+                                                                   "mode":  "raw"
+                                                               },
+                                                      "method":  "POST",
+                                                      "url":  "{{baseUrl}}/api/disco",
+                                                      "header":  [
+                                                                     {
+                                                                         "key":  "Accept",
+                                                                         "value":  "application/json"
+                                                                     },
+                                                                     {
+                                                                         "key":  "Content-Type",
+                                                                         "value":  "application/json"
+                                                                     }
+                                                                 ]
+                                                  }
+                                  },
+                                  {
+                                      "name":  "Buscar disco por ID",
+                                      "request":  {
+                                                      "method":  "GET",
+                                                      "url":  "{{baseUrl}}/api/disco/{{discoId}}",
+                                                      "header":  [
+                                                                     {
+                                                                         "key":  "Accept",
+                                                                         "value":  "application/json"
+                                                                     }
+                                                                 ]
+                                                  }
+                                  },
+                                  {
+                                      "name":  "Listar discos de un artista",
+                                      "request":  {
+                                                      "method":  "GET",
+                                                      "url":  "{{baseUrl}}/api/artista/{{artistaId}}/discos",
+                                                      "header":  [
+                                                                     {
+                                                                         "key":  "Accept",
+                                                                         "value":  "application/json"
+                                                                     }
+                                                                 ]
+                                                  }
+                                  }
+                              ]
+                 }
+             ],
+    "info":  {
+                 "description":  "Coleccion de pruebas de la API Discografia desarrollada con Java, Spring Boot y MongoDB.",
+                 "name":  "Discografia API REST",
+                 "schema":  "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+             }
+}

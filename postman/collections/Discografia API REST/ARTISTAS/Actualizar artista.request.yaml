@@ -1,0 +1,19 @@
+$kind: http-request
+url: "{{baseUrl}}/api/artista/{{artistaId}}"
+method: PUT
+headers:
+  Accept: application/json
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+        "nombre": "Metallica",
+        "estilos": [
+            "Heavy Metal",
+            "Thrash Metal"
+        ],
+        "anioFundacion": 1981,
+        "estaActivo": true
+    }
+order: 4000
